@@ -13,10 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="stylesheet" href="assets/css/pages/auth.css">
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/app.css">
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/pages/auth.css">
+    <link rel="shortcut icon" href="<%= request.getContextPath() %>/assets/images/favicon.svg" type="image/x-icon" sizes="48X48">
 </head>
 
 <body>
@@ -29,21 +30,21 @@
                         <div class="card-header">
                             
                             <div class="auth-logo">
-                                <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo"></a>
+                                <a href="index.html"><img src="<%= request.getContextPath() %>/assets/images/logo/logo.png" alt="Logo"></a>
                             </div>
                             <h1 class="auth-title">Login</h1>
                             <p class="auth-subtitle mb-5">Connectez-vous en tant qu'administrateur</p>
         
                         </div>
-                        <form action="user/back/login">
+                            <form action="back/login" method="post">
                             <div class="form-group position-relative has-icon-left mb-4">
-                                <input type="text" class="form-control form-control-xl" placeholder="Email" name="email">
+                                <input type="text" class="form-control form-control-xl" placeholder="Email" name="email" value="andrianina.rakoto@example.com">
                                 <div class="form-control-icon">
                                     <i class="bi bi-person"></i>
                                 </div>
                             </div>
                             <div class="form-group position-relative has-icon-left mb-4">
-                                <input type="password" class="form-control form-control-xl" placeholder="Password" name="mdp">
+                                <input type="password" class="form-control form-control-xl" placeholder="Password" name="mdp" value="Admin@123">
                                 <div class="form-control-icon">
                                     <i class="bi bi-shield-lock"></i>
                                 </div>

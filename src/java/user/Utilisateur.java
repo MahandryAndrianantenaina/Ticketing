@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author mahan
  */
-@Table("Utilisateur")
+@Table("utilisateur")
 public class Utilisateur extends ClassMAPTable{
    @Identifiant
    int idutilisateur;
@@ -84,19 +84,13 @@ public class Utilisateur extends ClassMAPTable{
     }
    
     public Utilisateur checkLogin() throws Exception {
-        StringBuilder query = new StringBuilder(String.format("select * from Utilisateur where email = '%s' ", getEmail()));
-        List<ClassMAPTable> results = this.getByRequest(query.toString());
-        List<Utilisateur> utilisateurs = results.stream()
-        .map(obj -> (Utilisateur) obj) 
-        .toList();
+        StringBuilder query = new StringBuilder(String.format("select * from utilisateur where email = '%s' ", getEmail()));
+        List<Utilisateur> utilisateurs = this.getByRequest(query.toString());
         if (utilisateurs.isEmpty()) {
             throw new Exception("Email incorrect.");
         }
         query.append(String.format(" and mdp = '%s'", getMdp()));
-        results = this.getByRequest(query.toString());
-        utilisateurs = results.stream()
-        .map(obj -> (Utilisateur) obj) 
-        .toList();
+        utilisateurs = this.getByRequest(query.toString());
         if (utilisateurs.isEmpty()) {
             throw new Exception("Mot de passe incorrect.");
         }

@@ -5,11 +5,16 @@
         <servlet-class>mg.itu.prom16.FrontController</servlet-class>
         <init-param>
             <param-name>ControllerPackage</param-name>
-            <param-value>mg.itu.controller</param-value>
+            <param-value>controlleur</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/assets/*</url-pattern>
+    </servlet-mapping>
+
 </web-app>
